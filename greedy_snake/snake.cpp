@@ -1,5 +1,4 @@
 #include <iostream> 
-#include <random>
 #include <cstring>
 #include <conio.h> //isn't stl
 #include <chrono>  //sleep
@@ -81,7 +80,6 @@ bool move() {
     }
     return true;
 }
-
 void game_init() {
     cout << "\x1b[2J"; // clear screen
     cout << "\e[?25l"; // hide cursor
@@ -134,7 +132,6 @@ void game_init() {
     print_x_y(rows + 2, 1, "History Record:");
     cout << maxlen << endl;
 }
-
 void fruit_generate() {
     do {
         fruit_x = rand() % (rows - 2) + 2;
@@ -143,7 +140,6 @@ void fruit_generate() {
     print_x_y(fruit_x, fruit_y, '.');
     fruit_is_exist = true;
 }
-
 bool replay() {
     cout << "\x1b[2J"; // clear screen
     print_x_y(1, 1, "Game over! \n");
@@ -162,9 +158,9 @@ bool replay() {
                     return false;
                 return true;
             }
-            print_x_y(4, i, '.');
+            print_x_y(5, i, '.');
             Snap(200);
         }
-        print_x_y(4, 1, "     ");
+        print_x_y(5, 1, "     ");
     }
 }
